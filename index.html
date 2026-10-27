@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>常亮 · AI 应用开发工程师 | Java / Python · 5 年</title>
+<meta name="description" content="常亮，AI 应用开发工程师。Java / Python，5 年经验。独立开发招聘领域 NL2SQL 问数 Agent，美团 AIDLC 研发 Agent、配送入驻核心系统。">
+<meta name="theme-color" content="#f5f4ef">
+<style>
+:root{
+  --paper:#f5f4ef; --card:#ffffff; --ink:#121214; --ink-2:#39393f; --ink-3:#77777d;
+  --line:#e3e0d6; --line-2:#c9c4b8; --accent:#14146b; --accent-soft:#e8eaf5;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC","Helvetica Neue",Arial,sans-serif;
+  --mono:"SF Mono","JetBrains Mono",Menlo,Consolas,"Courier New",monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:64px;}
+body{
+  margin:0;background:var(--paper);color:var(--ink-2);
+  font-family:var(--sans);font-size:15px;line-height:1.72;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;background:rgba(245,244,239,.88);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;align-items:center;gap:22px;height:52px;overflow-x:auto;scrollbar-width:none;}
+nav .wrap::-webkit-scrollbar{display:none;}
+nav .brand{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:.02em;white-space:nowrap;}
+nav .brand span{color:var(--ink-3);font-weight:400;}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;margin-left:auto;}
+nav a{
+  font-size:12.5px;color:var(--ink-3);white-space:nowrap;padding:4px 0;border-bottom:1.5px solid transparent;
+}
+nav a:hover{color:var(--ink);text-decoration:none;border-bottom-color:var(--accent);}
+nav .dl{
+  font-size:12px;font-family:var(--mono);color:var(--accent);border:1px solid var(--accent);
+  border-radius:3px;padding:3px 9px;white-space:nowrap;
+}
+nav .dl:hover{background:var(--accent);color:#fff;text-decoration:none;}
+
+/* ---------- hero ---------- */
+header{padding:56px 0 40px;border-bottom:1px solid var(--line);}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em;margin-bottom:14px;}
+.kicker b{color:var(--ink);}
+h1{
+  font-size:clamp(38px,7vw,58px);line-height:1.05;margin:0 0 12px;color:var(--ink);
+  letter-spacing:-.01em;font-weight:700;
+}
+.sub{font-size:16px;color:var(--ink-2);margin:0 0 6px;}
+.sub b{color:var(--ink);font-weight:600;}
+.meta{font-size:13.5px;color:var(--ink-3);margin:0;}
+.contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12.5px;
+  background:var(--card);border:1px solid var(--line);border-radius:4px;padding:6px 11px;color:var(--ink-2);
+}
+.chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+.chip i{font-style:normal;color:var(--ink-3);font-size:10.5px;letter-spacing:.05em;}
+
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:30px;
+}
+.stat{background:var(--paper);padding:16px 14px;}
+.stat b{display:block;font-size:26px;line-height:1.2;color:var(--accent);font-weight:700;}
+.stat span{font-size:12.5px;color:var(--ink-3);line-height:1.5;display:block;margin-top:2px;}
+
+/* ---------- section ---------- */
+section{padding:44px 0 8px;}
+.sh{display:flex;align-items:baseline;gap:12px;margin-bottom:22px;}
+.sh .no{font-family:var(--mono);font-size:12px;color:var(--ink-3);}
+.sh h2{
+  font-size:22px;margin:0;color:var(--ink);font-weight:700;letter-spacing:.01em;
+}
+.sh .en{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.08em;margin-left:auto;}
+
+/* ---------- skills ---------- */
+.sk{border-top:1px solid var(--line);padding:14px 0;}
+.sk:last-of-type{border-bottom:1px solid var(--line);}
+.sk .k{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.sk .v{font-size:14px;color:var(--ink-2);}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
+.tag{
+  font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-soft);
+  border-radius:3px;padding:4px 9px;
+}
+
+/* ---------- timeline / cards ---------- */
+.row{
+  background:var(--card);border:1px solid var(--line);border-radius:6px;
+  margin-bottom:12px;overflow:hidden;
+}
+.row>summary{
+  list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:flex-start;gap:14px;
+}
+.row>summary::-webkit-details-marker{display:none;}
+.row>summary:hover{background:#faf9f5;}
+.row .idx{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:3px;min-width:52px;}
+.row .ttl{flex:1;min-width:0;}
+.row .ttl h3{font-size:16px;margin:0 0 3px;color:var(--ink);font-weight:700;}
+.row .ttl .org{font-size:13.5px;color:var(--ink-3);}
+.row .ttl .org b{color:var(--ink-2);font-weight:600;}
+.row .when{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap;padding-top:3px;}
+.row .caret{
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:4px;transition:transform .18s;
+}
+.row[open] .caret{transform:rotate(180deg);}
+.row .body{padding:0 18px 18px 18px;border-top:1px solid var(--line);}
+.row .lead{font-size:14px;color:var(--ink-2);margin:14px 0 12px;}
+.row .lead b{color:var(--ink);font-weight:600;}
+.row .lbl{
+  font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.05em;
+  margin:14px 0 6px;
+}
+ul.bl{list-style:none;margin:0;padding:0;}
+ul.bl li{
+  position:relative;padding-left:15px;margin-bottom:6px;font-size:14px;color:var(--ink-2);
+}
+ul.bl li::before{
+  content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--line-2);
+}
+ul.bl li b{color:var(--ink);font-weight:600;}
+.stack{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-3);background:#faf9f5;
+  border-left:2px solid var(--accent);padding:8px 11px;margin-top:14px;word-break:break-word;
+}
+.stack b{color:var(--accent);font-weight:400;letter-spacing:.05em;}
+
+/* ---------- edu / adv ---------- */
+.edu{
+  display:flex;align-items:baseline;gap:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:6px;padding:16px 18px;
+}
+.edu h3{font-size:16px;margin:0;color:var(--ink);font-weight:700;}
+.edu .d{font-size:13.5px;color:var(--ink-3);}
+.edu .y{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-left:auto;}
+
+/* ---------- footer ---------- */
+footer{margin-top:46px;border-top:1px solid var(--line);padding:30px 0 44px;}
+.adv{list-style:none;margin:0 0 28px;padding:0;}
+.adv li{
+  position:relative;padding-left:17px;margin-bottom:8px;font-size:14px;color:var(--ink-2);
+}
+.adv li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:12px;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:18px;}
+.fitem{font-family:var(--mono);font-size:12.5px;}
+.fitem i{display:block;font-style:normal;font-size:10px;color:var(--ink-3);letter-spacing:.08em;margin-bottom:2px;}
+.fitem a,.fitem span{color:var(--ink-2);}
+.copy{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-3);border-top:1px dashed var(--line);
+  padding-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+}
+.btn{
+  font-family:var(--mono);font-size:11.5px;color:var(--accent);border:1px solid var(--accent);
+  border-radius:3px;padding:3px 9px;cursor:pointer;background:transparent;
+}
+.btn:hover{background:var(--accent);color:#fff;}
+
+@media (max-width:640px){
+  body{font-size:14.5px;}
+  .wrap{padding:0 16px;}
+  header{padding:36px 0 28px;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .row>summary{flex-wrap:wrap;gap:8px;}
+  .row .idx{min-width:0;}
+  .row .when{margin-left:0;width:100%;}
+  .edu{flex-direction:column;gap:6px;}
+  .edu .y{margin-left:0;}
+  nav .brand{display:none;}
+}
+
+/* ---------- print ---------- */
+@media print{
+  :root{--paper:#fff;}
+  nav{display:none;}
+  body{font-size:9.6pt;line-height:1.6;}
+  .wrap{max-width:none;padding:0;}
+  header{padding:0 0 8mm;border-bottom:1px solid #ddd;}
+  h1{font-size:26pt;}
+  .sub{font-size:11pt;}
+  .stats{grid-template-columns:repeat(4,1fr);margin-top:5mm;}
+  .stat b{font-size:15pt;}
+  .stat span{font-size:8.5pt;}
+  section{padding:5mm 0 0;break-inside:auto;}
+  .sh{margin-bottom:3mm;}
+  .sh h2{font-size:13pt;}
+  .sk{padding:1.6mm 0;}
+  .sk .k{font-size:9.6pt;}
+  .sk .v{font-size:9.2pt;}
+  .tag{font-size:8pt;padding:1px 5px;}
+  .tags{margin-top:2.5mm;gap:4px;}
+  .row{break-inside:avoid;border-color:#ddd;margin-bottom:2.5mm;}
+  .row>summary{padding:2mm 3mm;}
+  .row .ttl h3{font-size:10.5pt;}
+  .row .body{padding:0 3mm 2.5mm;}
+  .row .lead{font-size:9.2pt;margin:2mm 0 1.5mm;}
+  ul.bl li{font-size:9.2pt;margin-bottom:1mm;padding-left:10px;}
+  ul.bl li::before{top:6px;width:3px;height:3px;}
+  .stack{font-size:8pt;padding:1.2mm 2mm;margin-top:2mm;}
+  .edu{padding:2mm 3mm;}
+  .edu h3{font-size:10.5pt;}
+  .adv li{font-size:9.2pt;margin-bottom:1.2mm;}
+  footer{margin-top:5mm;padding:2mm 0 0;}
+  .btn,.caret{display:none;}
+  details{border:0;}
+  a{color:#000;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">CHANG LIANG <span>/ AI APPLICATION ENGINEER</span></div>
+    <ul>
+      <li><a href="#skills">专业技能</a></li>
+      <li><a href="#exp">工作经历</a></li>
+      <li><a href="#proj">核心项目</a></li>
+      <li><a href="#edu">教育背景</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+    <a class="dl" href="changliang-resume.pdf" download>下载 PDF</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">你好，我是 <b>AI 应用开发工程师</b></div>
+    <h1>常亮</h1>
+    <p class="sub"><b>AI 应用开发工程师</b> | Java / Python · 5 年经验 · 北京</p>
+    <p class="meta">独立开发招聘领域 NL2SQL 问数 Agent；美团期间推动 AI 工具在团队工程化落地</p>
+
+    <div class="contact">
+      <a class="chip" href="mailto:clinux134@163.com"><i>MAIL</i>clinux134@163.com</a>
+      <a class="chip" href="https://github.com/cl9428" target="_blank" rel="noopener"><i>GIT</i>github.com/cl9428</a>
+      <span class="chip"><i>BASE</i>北京 · 可 relocation</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>5年</b><span>Java / Python 后端与 AI</span></div>
+      <div class="stat"><b>2套</b><span>Agent 系统从 0 到生产</span></div>
+      <div class="stat"><b>250条</b><span>NL2SQL 评测回归集</span></div>
+      <div class="stat"><b>80%+</b><span>AI 代码生成准确率</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sh"><span class="no">01</span><h2>专业技能</h2><span class="en">BY CATEGORY</span></div>
+
+    <div class="sk">
+      <div class="k">AI 应用开发</div>
+      <div class="v">熟悉 AI Agent 开发与 LLM 应用架构（RAG、Prompt Engineering、Function Calling），具备知识库构建与 AI Skill 开发实战经验；独立开发 NL2SQL 问数 Agent 并接入 Hi Agent 平台知识库能力；策略类代码一次生成可用率约 80%+，方案单篇撰写耗时下降约 50%</div>
+    </div>
+    <div class="sk">
+      <div class="k">Java 基础与框架</div>
+      <div class="v">熟练掌握 Java 核心编程与集合、并发、IO 体系，熟练使用 Spring Boot、Spring Cloud、MyBatis-Plus，熟悉 DDD 分层架构与策略/模板/工厂设计模式</div>
+    </div>
+    <div class="sk">
+      <div class="k">Python 与自动化</div>
+      <div class="v">了解 Python 开发（数据处理、脚本自动化、工具链开发），具备 SQL 数据分析能力（Hive/MySQL）</div>
+    </div>
+    <div class="sk">
+      <div class="k">中间件与分布式</div>
+      <div class="v">熟悉 Redis（分布式锁、三级缓存方案）、RocketMQ/Mafka（幂等消费、异步解耦），了解 Thrift RPC、Crane 分布式调度</div>
+    </div>
+    <div class="sk">
+      <div class="k">工程化与性能优化</div>
+      <div class="v">熟悉 MySQL 索引优化与慢 SQL 调优，了解 JVM 内存排查（VisualVM），熟悉 CI/CD、Cat/Raptor 监控、ELK 日志</div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">AI Agent</span><span class="tag">RAG</span><span class="tag">Prompt Engineering</span>
+      <span class="tag">Function Calling</span><span class="tag">Text2SQL / NL2SQL</span><span class="tag">知识库平台对接</span>
+      <span class="tag">Milvus</span><span class="tag">agentscope 2.0</span><span class="tag">LiteFlow</span>
+      <span class="tag">Qwen / GLM / Claude</span><span class="tag">多模型路由</span><span class="tag">Java</span>
+      <span class="tag">Spring Boot</span><span class="tag">Spring Cloud / Nacos</span><span class="tag">MyBatis-Plus</span>
+      <span class="tag">DDD</span><span class="tag">Redis</span><span class="tag">RocketMQ / Kafka</span>
+      <span class="tag">Python</span><span class="tag">Oracle / MySQL</span><span class="tag">Docker</span>
+    </div>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="wrap">
+    <div class="sh"><span class="no">02</span><h2>工作经历</h2><span class="en">4 ROWS · CLICK TO EXPAND</span></div>
+
+    <details class="row" open>
+      <summary>
+        <span class="idx">IN 2026.07</span>
+        <span class="ttl">
+          <h3>独立开发（合作项目）· AI 应用开发 · 招聘领域智能问数 Agent</h3>
+          <span class="org">离职后接了一个合作方的 AI 应用项目，独立做招聘领域智能问数 Agent，并把检索层接入对方自研的 Hi Agent 平台。</span>
+        </span>
+        <span class="when">2026.07 · 至今</span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <ul class="bl">
+          <li><b>问数 Agent 架构：</b>Spring Cloud / Nacos 架构（服务注册与配置管理）对外提供 /api/v1/chat 问数接口，agentscope 2.0 做 Agent 编排；同一批 SQL 生成任务上对比中文语义与 SQL 正确性后，确定 Qwen 3.8 27B 为主用模型，其余模型做路由兜底</li>
+          <li><b>幻觉列治理：</b>业务表字段名不规范导致模型编造不存在的列，用 Milvus + 自研确定性 Embedding 做 schema 语义召回，先召回表与字段再交给模型生成；同输入同结果，便于回归对比</li>
+          <li><b>Hi Agent 平台对接：</b>将自建的向量检索层接入 Hi Agent（合作方自研的 AI Agent 平台）知识库能力，按平台标准接口完成文档与 schema 的入库及语义召回调用，检索由项目内自建改为复用平台能力</li>
+          <li><b>评测与回归：</b>建 250 条 QA 回归集作为发布闸门，每次调整 Prompt / schema / 模型均全量回归并留痕口径与生成 SQL；错误按类型归档（虚构列、方言 SQL、口径错）沉淀为 wrong-case 库</li>
+          <li><b>状态与记忆：</b>agentscope_state 落 MySQL，多轮对话中断可恢复；当前匹配率 80%+，已交付 1 个招聘团队小范围试用</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="row" open>
+      <summary>
+        <span class="idx">IN 2024.10</span>
+        <span class="ttl">
+          <h3>美团（到家事业群 · 到家履约平台）· Java 开发工程师</h3>
+          <span class="org">所属履约平台-企客技术组，负责配送入驻选服务中心系统开发，同时推动 AI 工具在团队中的工程化落地。</span>
+        </span>
+        <span class="when">2024.10 · 2026.07</span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <ul class="bl">
+          <li><b>AI 知识库建设：</b>基于 CatPaw AI Agent 平台构建项目结构化知识库，沉淀 40+ 篇文档（架构/业务/接口/方案），为 AI 辅助开发提供高质量上下文</li>
+          <li><b>AI Skill 开发：</b>开发领域知识库 Skill（selector-domain-knowledge），组内日常使用中抽样人工 Review，策略类代码一次生成可用率约 80%+，单次生成节省约 30 分钟手工编码</li>
+          <li><b>AI 辅助方案撰写：</b>利用 AI + 知识库辅助技术方案输出，累计产出 10+ 篇设计文档；同类方案单篇撰写耗时对比，AI 辅助后耗时下降约 50%</li>
+          <li><b>费率配置化引擎：</b>FreeMarker 模板 + 四种数据源策略，新增费率模式配置 JSON 即可上线，开发周期从 3 天缩短至 0.5 天（提效 83%）</li>
+          <li><b>多租户策略架构：</b>维护 90+ 策略实现类，策略工厂 + 模板方法模式支撑多租户场景</li>
+          <li><b>外卖多店迁移：</b>三重灰度机制（Lion 开关 + DB 判断 + acctId 取模），迁移期间零线上故障</li>
+          <li><b>跑腿多主配升级：</b>支持同一门店经济送、美团直送、1V1 急送并列展示</li>
+          <li><b>门店账号换绑：</b>MQ 消息驱动 + 分布式锁 + 幂等消费 + 快照回滚，三张核心表级联更新</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="row">
+      <summary>
+        <span class="idx">IN 2022.12</span>
+        <span class="ttl">
+          <h3>北京世纪国源科技有限公司 · Java 开发工程师</h3>
+          <span class="org">负责农业保险核心系统「耘智保」后端开发与性能优化，平台服务全国 30+ 省市。</span>
+        </span>
+        <span class="when">2022.12 · 2024.10</span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <ul class="bl">
+          <li><b>慢 SQL 治理：</b>Oracle AWR 报告定位瓶颈，复合索引优化 + 5 张核心表索引重建，查询性能提升 60%+</li>
+          <li><b>生产 OOM 排查：</b>VisualVM Dump 定位大对象未释放，引入 RocketMQ 异步解耦，根治内存泄漏</li>
+          <li><b>数据大屏优化：</b>CompletableFuture 并行 8 路数据源 + Gzip + Redis 缓存，响应从 3s 降至 200ms</li>
+          <li><b>地块重叠检测：</b>JTS 空间计算实现边界重叠判断（精度 99.5%），支撑承保风控</li>
+          <li><b>权限体系：</b>Spring Security + JWT 实现多角色多组织细粒度数据权限控制</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="row">
+      <summary>
+        <span class="idx">IN 2021.07</span>
+        <span class="ttl">
+          <h3>东华合创科技有限公司 · Java 开发工程师</h3>
+          <span class="org">参与智慧水利数据中心平台开发，提供数据采集、存储、检索与可视化一体化方案。</span>
+        </span>
+        <span class="when">2021.07 · 2022.10</span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <ul class="bl">
+          <li>搭建 Zookeeper + Solr 全文检索集群，集成 IK 中文分词</li>
+          <li>开发 SSO 统一认证，整合 5 个子系统，一次登录全平台通行</li>
+          <li>对接 20+ 种传感器协议（MQTT/Modbus/HTTP），实现 IoT 数据统一接入与清洗</li>
+          <li>WebSocket 实时推送监测数据，配合 ECharts + Vue.js 开发可视化大屏</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="proj">
+  <div class="wrap">
+    <div class="sh"><span class="no">03</span><h2>核心项目</h2><span class="en">4 ROWS · CLICK TO EXPAND</span></div>
+
+    <details class="row" open>
+      <summary>
+        <span class="idx">ROW_01 · 2026</span>
+        <span class="ttl">
+          <h3>招聘领域智能问数 Agent</h3>
+          <span class="org">独立项目 · 2026.07 至今</span>
+        </span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <p class="lead">业务方取数需数据同学手写 SQL，排期长且口径不一致，独立搭建中文问数 Agent：自然语言提问 → 自动生成 SQL → 执行返回结果。</p>
+        <div class="lbl">【背景】</div>
+        <p class="lead" style="margin-top:6px;">招聘业务方取数依赖数据同学手写 SQL，排期长，业务口径反复对不齐，数据同学成了取数瓶颈。</p>
+        <div class="lbl">【职责与成果】</div>
+        <ul class="bl">
+          <li><b>架构与模型选型：</b>Spring Cloud / Nacos 架构（服务注册与配置管理）对外提供 /api/v1/chat，agentscope 2.0 做 Agent 编排；同一批 SQL 生成任务上对比中文语义与 SQL 正确性后确定 Qwen 3.8 27B 为主用模型，其余模型路由兜底</li>
+          <li><b>幻觉列治理：</b>业务表字段名不规范导致模型编造不存在的列，用 Milvus + 自研确定性 Embedding 做 schema 语义召回，先召回表与字段再交给模型生成；同输入同结果，便于回归对比</li>
+          <li><b>Hi Agent 平台对接：</b>将自建向量检索层接入 Hi Agent（合作方自研的 AI Agent 平台）知识库能力，按平台标准接口完成文档与 schema 的入库及语义召回调用，检索由项目内自建改为复用平台能力</li>
+          <li><b>评测闭环：</b>建立 250 条 QA 回归集作为发布闸门，每次调整 Prompt / schema / 模型均全量回归并留痕口径与生成 SQL；错误按类型自动归档（虚构列、方言 SQL、口径错）沉淀为 wrong-case 库，同类错误不犯第二次</li>
+          <li><b>状态与记忆：</b>agentscope_state 落 MySQL 实现 Agent 状态与记忆持久化，多轮对话中断可恢复</li>
+          <li>当前匹配率 40%+，已交付 1 个招聘团队小范围试用；下一步做 schema 结构化拆分与 SQL 工具收敛</li>
+        </ul>
+        <div class="stack"><b>STACK</b> &nbsp;agentscope 2.0 · Spring Cloud / Nacos · Milvus · MySQL · Qwen 3.8 27B · NL2SQL · Hi Agent</div>
+      </div>
+    </details>
+
+    <details class="row" open>
+      <summary>
+        <span class="idx">ROW_02 · 2024</span>
+        <span class="ttl">
+          <h3>AI 工程化实践 · 团队效能提升</h3>
+          <span class="org">美团 · 2024.10 – 2026.07</span>
+        </span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <p class="lead">从组内痛点出发做的一套 AI 辅助研发工具，后来并入团队 AIDLC 研发 Agent 项目。</p>
+        <div class="lbl">【背景】</div>
+        <p class="lead" style="margin-top:6px;">团队系统复杂度高（90+ 策略类、40+ 篇文档），新人上手周期长，重复性编码耗时，方案撰写效率待提升。</p>
+        <div class="lbl">【职责与成果】</div>
+        <ul class="bl">
+          <li>构建项目结构化知识库：40+ 篇文档按架构/业务/接口/方案分类切分入库，作为 RAG 检索语料</li>
+          <li>开发 AI Skill（selector-domain-knowledge）：封装领域知识为 AI 可调用工具，策略类代码生成准确率 80%+，单次生成节省约 30 分钟手工编码</li>
+          <li>建立团队 AI 工作流规范：需求分析 → 方案撰写 → 代码生成 → Code Review 全流程 AI 辅助</li>
+          <li>量化效果：策略类代码一次生成可用率约 80%+（抽样人工 Review）；同类技术方案单篇撰写耗时对比，AI 辅助后耗时下降约 50%</li>
+        </ul>
+        <div class="stack"><b>STACK</b> &nbsp;CatPaw AI Agent · RAG · Prompt Engineering · Function Calling · Markdown 知识库</div>
+      </div>
+    </details>
+
+    <details class="row">
+      <summary>
+        <span class="idx">ROW_03 · 2024</span>
+        <span class="ttl">
+          <h3>配送入驻选服务中心</h3>
+          <span class="org">美团 · 2024.10 – 2026.07</span>
+        </span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <p class="lead">美团斑马体系配送入驻核心平台，统一承接三条业务线商家入驻全流程，日均调用量万级。</p>
+        <div class="lbl">【背景】</div>
+        <p class="lead" style="margin-top:6px;">餐饮、闪购、医药三条业务线商家入驻流程分散，各业务方重复开发接入，成本高且口径不一致。</p>
+        <div class="lbl">【职责与成果】</div>
+        <ul class="bl">
+          <li>DDD 分层架构 + 策略模式实现多租户隔离（90+ 策略类），新租户接入只需实现策略接口 + 配置注册</li>
+          <li>三级缓存架构（Caffeine L1 + Redis L2 + DB L3）+ 异步刷新，DB 读压力降低 70%</li>
+          <li>三重灰度机制保障功能平滑上线，灰度期间零线上事故</li>
+          <li>费率配置化：抽象四种数据源策略，新增模式仅需 JSON 配置，开发周期从 3 天缩短至 0.5 天</li>
+        </ul>
+        <div class="stack"><b>STACK</b> &nbsp;Spring Boot · Thrift RPC · MySQL · Redis · Caffeine · Mafka · Lion · Crane · MapStruct</div>
+      </div>
+    </details>
+
+    <details class="row">
+      <summary>
+        <span class="idx">ROW_04 · 2022</span>
+        <span class="ttl">
+          <h3>耘智保 · 农业保险系统</h3>
+          <span class="org">北京世纪国源 · 2022.12 – 2024.10</span>
+        </span>
+        <span class="caret">▾</span>
+      </summary>
+      <div class="body">
+        <p class="lead">面向全国 30+ 省市的农业保险综合管理平台，涵盖承保、理赔、再保险全流程。</p>
+        <div class="lbl">【背景】</div>
+        <p class="lead" style="margin-top:6px;">系统承载全国 30+ 省市农险业务，核心查询缓慢、生产内存告警频发，大屏加载无法满足业务预期。</p>
+        <div class="lbl">【职责与成果】</div>
+        <ul class="bl">
+          <li>AWR 慢 SQL 分析 + 复合索引优化 + 5 张核心表索引重建，查询性能提升 60%+，慢查询告警归零</li>
+          <li>VisualVM Dump 定位 OOM 根因（静态大对象未释放），引入 RocketMQ 异步分批解耦后内存稳定</li>
+          <li>CompletableFuture 并行编排 8 路数据源 + Redis 多级缓存，数据大屏响应从 3s 降至 200ms</li>
+          <li>JTS 地块重叠检测（精度 99.5%），支撑承保风控拦截重复投保</li>
+        </ul>
+        <div class="stack"><b>STACK</b> &nbsp;Spring Boot · MyBatis-Plus · Oracle · Redis · RocketMQ · JTS</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="edu">
+  <div class="wrap">
+    <div class="sh"><span class="no">04</span><h2>教育背景</h2><span class="en">EDUCATION</span></div>
+    <div class="edu">
+      <h3>山西农业大学信息学院</h3>
+      <span class="d">计算机科学与技术 · 本科</span>
+      <span class="y">2019.09 – 2021.07</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sh"><span class="no">05</span><h2>个人优势</h2><span class="en">STRENGTHS</span></div>
+    <ul class="adv">
+      <li>AI 工程化环节都完整做过：知识库构建、AI Skill 开发、独立的 NL2SQL 问数 Agent，以及 Hi Agent 平台的知识库对接</li>
+      <li>在美团负责过日均万级调用的配送入驻核心系统，需求从方案设计到灰度上线由我推进到底</li>
+      <li>注重系统稳定性，擅长灰度发布方案设计，迁移类需求均零线上事故</li>
+      <li>注重技术文档沉淀，40+ 篇文档构建团队知识体系，支撑 AI 辅助开发与新人 onboarding</li>
+    </ul>
+
+    <div class="fgrid">
+      <div class="fitem"><i>MAIL</i><a href="mailto:clinux134@163.com">clinux134@163.com</a></div>
+      <div class="fitem"><i>GIT</i><a href="https://github.com/cl9428" target="_blank" rel="noopener">github.com/cl9428</a></div>
+      <div class="fitem"><i>BASE</i><span>北京 · 可 relocation</span></div>
+    </div>
+
+    <div class="copy">
+      <button class="btn" id="copyMail">复制邮箱</button>
+      <span>按 Ctrl / ⌘ + P 可导出 A4 PDF（自动展开全部折叠项）</span>
+      <span style="margin-left:auto;">© 2026 常亮</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 打印时自动展开全部折叠项
+(function(){
+  var before = null;
+  window.addEventListener('beforeprint', function(){
+    before = [].slice.call(document.querySelectorAll('details.row'));
+    before.forEach(function(d){ d.dataset.wasOpen = d.open ? '1' : '0'; d.open = true; });
+  });
+  window.addEventListener('afterprint', function(){
+    if(!before) return;
+    before.forEach(function(d){ d.open = d.dataset.wasOpen === '1'; });
+    before = null;
+  });
+})();
+
+// 复制邮箱
+(function(){
+  var btn = document.getElementById('copyMail');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var mail = 'clinux134@163.com';
+    var done = function(){ var t = btn.textContent; btn.textContent = '已复制 ✓'; setTimeout(function(){ btn.textContent = t; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(mail).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = mail; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
+</content>
