@@ -21,11 +21,19 @@ python3 -m http.server 8000
 
 ## 更新内容
 
-直接改 `index.html` 里的文案，然后：
+方式一（配好 SSH 后）：
 
 ```bash
 git add -A && git commit -m "update resume" && git push
 ```
+
+方式二（本机 HTTPS 到 github.com 不通时用 API 直接推，不用 git）：
+
+```bash
+GH_TOKEN=$(gh auth token) python3 deploy.py resume
+```
+
+`deploy.py` 会复用已存在的仓库，按文件内容更新（自动带 sha），幂等可重复执行。
 
 ## 更新 PDF
 
