@@ -404,7 +404,7 @@ footer{margin-top:46px;border-top:1px solid var(--line);padding:30px 0 44px;}
           <li><b>Hi Agent 平台对接：</b>将自建向量检索层接入 Hi Agent（合作方自研的 AI Agent 平台）知识库能力，按平台标准接口完成文档与 schema 的入库及语义召回调用，检索由项目内自建改为复用平台能力</li>
           <li><b>评测闭环：</b>建立 250 条 QA 回归集作为发布闸门，每次调整 Prompt / schema / 模型均全量回归并留痕口径与生成 SQL；错误按类型自动归档（虚构列、方言 SQL、口径错）沉淀为 wrong-case 库，同类错误不犯第二次</li>
           <li><b>状态与记忆：</b>agentscope_state 落 MySQL 实现 Agent 状态与记忆持久化，多轮对话中断可恢复</li>
-          <li>当前匹配率 40%+，已交付 1 个招聘团队小范围试用；下一步做 schema 结构化拆分与 SQL 工具收敛</li>
+          <li>当前匹配率 80%+，已交付 1 个招聘团队小范围试用；下一步做 schema 结构化拆分与 SQL 工具收敛</li>
         </ul>
         <div class="stack"><b>STACK</b> &nbsp;agentscope 2.0 · Spring Cloud / Nacos · Milvus · MySQL · Qwen 3.8 27B · NL2SQL · Hi Agent</div>
       </div>
